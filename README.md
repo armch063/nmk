@@ -40,13 +40,13 @@ do
 end
 
     
-game:GetService("Players").LocalPlayer.Idled:connect(function()
+    game:GetService("Players").LocalPlayer.Idled:connect(function()
         game:GetService("VirtualUser"):Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
         wait(1)
         game:GetService("VirtualUser"):Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
     end)
 
-    _G.Color = Color3.fromRGB(16,255,24)
+    _G.Color = Color3.fromRGB(96,255,16)
     if not game:IsLoaded() then repeat game.Loaded:Wait() until game:IsLoaded() end
     
     repeat wait() until game:GetService("Players")
@@ -170,7 +170,7 @@ game:GetService("Players").LocalPlayer.Idled:connect(function()
         NameHub.Size = UDim2.new(0, 110, 0, 20)
         NameHub.Font = Enum.Font.GothamSemibold
         NameHub.Text = text
-        NameHub.TextColor3 = Color3.fromRGB(16,255,24)
+        NameHub.TextColor3 = Color3.fromRGB(225, 0, 0)
         NameHub.TextSize = 11.000
         NameHub.TextXAlignment = Enum.TextXAlignment.Left
     
@@ -384,7 +384,7 @@ game:GetService("Players").LocalPlayer.Idled:connect(function()
                     TweenService:Create(
                         PageButton,
                         TweenInfo.new(0.3,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),
-                        {TextColor3 = Color3.fromRGB(16,255,24)}
+                        {TextColor3 = Color3.fromRGB(255,0,0)}
                     ):Play()
                 end
             end)
@@ -393,7 +393,7 @@ game:GetService("Players").LocalPlayer.Idled:connect(function()
                 TweenService:Create(
                     PageButton,
                     TweenInfo.new(0.3,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),
-                    {TextColor3 = Color3.fromRGB(16,255,24)}
+                    {TextColor3 = Color3.fromRGB(255,0,0)}
                 ):Play()
                 for i,v in next, TabFolder:GetChildren() do 
                     if v.Name == "MainTab" then
@@ -413,7 +413,7 @@ game:GetService("Players").LocalPlayer.Idled:connect(function()
             
             local main = {}
             
-            function main:AddButton(text,callback)
+            function main:Button(text,callback)
                 local Button = Instance.new("TextButton")
     
                 Button.Name = "Button"
@@ -438,7 +438,7 @@ game:GetService("Players").LocalPlayer.Idled:connect(function()
                     TweenService:Create(
                         Button,
                         TweenInfo.new(0.4,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),
-                        {TextColor3 = Color3.fromRGB(16,255,24)}
+                        {TextColor3 = Color3.fromRGB(255,0,0)}
                     ):Play()
                 end)
                 
@@ -461,7 +461,7 @@ game:GetService("Players").LocalPlayer.Idled:connect(function()
                 end)
             end
             
-            function main:AddToggle(text,config,callback)
+            function main:Toggle(text,config,callback)
                 local ToggleImage = Instance.new("Frame")
                 
                 local Toggle = Instance.new("TextButton")
@@ -510,7 +510,7 @@ game:GetService("Players").LocalPlayer.Idled:connect(function()
                 ToggleImage2.Name = "ToggleImage2"
                 ToggleImage2.Parent = ToggleImage
                 ToggleImage2.AnchorPoint = Vector2.new(0.5, 0.5)
-                ToggleImage2.BackgroundColor3 = Color3.fromRGB(16,255,24)
+                ToggleImage2.BackgroundColor3 = Color3.fromRGB(255,0,0)
                 ToggleImage2.Position = UDim2.new(0, 10, 0, 10)
                 ToggleImage2.Visible = false
     
@@ -523,7 +523,7 @@ game:GetService("Players").LocalPlayer.Idled:connect(function()
                     TweenService:Create(
                         ToggleLabel,
                         TweenInfo.new(0.4,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),
-                        {TextColor3 = Color3.fromRGB(16,255,24)}
+                        {TextColor3 = Color3.fromRGB(255,0,0)}
                     ):Play()
                 end)
     
@@ -558,7 +558,7 @@ game:GetService("Players").LocalPlayer.Idled:connect(function()
                 end
             end
     
-            function main:AddTextbox(text,holder,disappear,callback)
+            function main:Textbox(text,holder,disappear,callback)
                 local Textboxx = Instance.new("Frame")
                 local TextboxxCorner = Instance.new("UICorner")
                 local TextboxTitle = Instance.new("TextLabel")
@@ -612,7 +612,7 @@ game:GetService("Players").LocalPlayer.Idled:connect(function()
                 TextboxCorner.Parent = Textbox
             end
     
-            function main:AddDropdown(text,table,callback)
+            function main:Dropdown(text,table,callback)
                 local Dropdown = Instance.new("Frame")
                 local UICorner = Instance.new("UICorner")
                 local DropButton = Instance.new("TextButton")
@@ -703,7 +703,7 @@ game:GetService("Players").LocalPlayer.Idled:connect(function()
                         TweenService:Create(
                             DropButton2,
                             TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-                            {TextColor3 = Color3.fromRGB(16,255,24)}
+                            {TextColor3 = Color3.fromRGB(255,0,0)}
                         ):Play()
                     end)
                     DropButton2.MouseLeave:Connect(function()
@@ -813,7 +813,7 @@ game:GetService("Players").LocalPlayer.Idled:connect(function()
                 return drop
             end
     
-            function main:AddSlider(text,min,max,set,callback)
+            function main:Slider(text,min,max,set,callback)
                 set = (math.clamp(set,min,max))
                 if set > max then set = max end
     
@@ -879,7 +879,7 @@ game:GetService("Players").LocalPlayer.Idled:connect(function()
     
                 Bar.Name = "Bar"
                 Bar.Parent = Bar1
-                Bar.BackgroundColor3 = Color3.fromRGB(16,255,24)
+                Bar.BackgroundColor3 = Color3.fromRGB(255,0,0)
                 Bar.Size = UDim2.new(set/max, 0, 0, 5)
     
                 UICorner_2.CornerRadius = UDim.new(0, 100)
@@ -944,7 +944,7 @@ game:GetService("Players").LocalPlayer.Idled:connect(function()
                     end
                 end)
             end
-            function main:AddSeperator(text)
+            function main:Seperator(text)
                 local Seperator = Instance.new("Frame")
                 local Sep1 = Instance.new("Frame")
                 local SepLabel = Instance.new("TextLabel")
@@ -959,7 +959,7 @@ game:GetService("Players").LocalPlayer.Idled:connect(function()
     
                 Sep1.Name = "Sep1"
                 Sep1.Parent = Seperator
-                Sep1.BackgroundColor3 = Color3.fromRGB(16,255,24)
+                Sep1.BackgroundColor3 = Color3.fromRGB(255,0,0)
                 Sep1.BorderSizePixel = 0
                 Sep1.Position = UDim2.new(0, 0, 0, 10)
                 Sep1.Size = UDim2.new(0, 150, 0, 1)
@@ -977,12 +977,12 @@ game:GetService("Players").LocalPlayer.Idled:connect(function()
     
                 Sep2.Name = "Sep2"
                 Sep2.Parent = Seperator
-                Sep2.BackgroundColor3 = Color3.fromRGB(16,255,24)
+                Sep2.BackgroundColor3 = Color3.fromRGB(255,0,0)
                 Sep2.BorderSizePixel = 0
                 Sep2.Position = UDim2.new(0, 305, 0, 10)
                 Sep2.Size = UDim2.new(0, 150, 0, 1)
             end
-            function main:AddLine()
+            function main:Line()
                 local Line = Instance.new("Frame")
                 local Linee = Instance.new("Frame")
     
@@ -995,12 +995,12 @@ game:GetService("Players").LocalPlayer.Idled:connect(function()
     
                 Linee.Name = "Linee"
                 Linee.Parent = Line
-                Linee.BackgroundColor3 = Color3.fromRGB(16,255,24)
+                Linee.BackgroundColor3 = Color3.fromRGB(255,0,0)
                 Linee.BorderSizePixel = 0
                 Linee.Position = UDim2.new(0, 0, 0, 10)
                 Linee.Size = UDim2.new(0, 455, 0, 1)
             end
-            function main:AddLabel(text)
+            function main:Label(text)
                 local Label = Instance.new("TextLabel")
                 local PaddingLabel = Instance.new("UIPadding")
                 local labell = {}
@@ -1034,7 +1034,7 @@ game:GetService("Players").LocalPlayer.Idled:connect(function()
 
 -- Script
 
-local SOMEXHUB = library:AddWindow("1XLII HUB V3| BF ",Enum.KeyCode.RightControl)
+local SOMEXHUB = library:AddWindow("1XLII HUB | BATE ",Enum.KeyCode.RightControl)
 local AutoFarm = SOMEXHUB:AddTab("AutoFarm")
 local Stats = SOMEXHUB:AddTab("Stats")
 local Auto = SOMEXHUB:AddTab("Auto")
